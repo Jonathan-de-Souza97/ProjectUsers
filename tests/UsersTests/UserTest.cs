@@ -83,5 +83,29 @@ namespace ProjectUsers.Tests
             Assert.True(user.Invalid);
             Assert.Contains(user.Errors, e => e.Equals("Password: Password must contain at least one uppercase letter, one lowercase letter, one number, one special character, and be at least 8 characters long"));
         }
+
+        [Fact]
+        public void ReturnErrorWhenTelephoneIsNullorEmpyt()
+        {
+            //Arrange
+            var user = new User(proprieties.nameValid, proprieties.emailValid, proprieties.passwordValid, null);
+
+            //Act Assert
+            Assert.True(user.Invalid);
+            Assert.Contains(user.Errors, e => e.Equals("Telephone: Telephone is required"));
+        }
+
+        // [Fact]
+        // public void ReturnErrorWhenTelephoneDDDIsNullorEmpyt()
+        // {
+        //     var telephone = new Telephone(proprieties.dddNull, proprieties.phoneNumberValid);
+
+        //     //Arrange
+        //     var user = new User(proprieties.nameValid, proprieties.emailValid, proprieties.passwordValid, telephone);
+
+        //     //Act Assert
+        //     Assert.True(user.Invalid);
+        //     Assert.Contains(user.Errors, e => e.Equals("Telephone.DDD: DDD is required"));
+        // }
     }
 }     

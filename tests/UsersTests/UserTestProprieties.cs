@@ -22,6 +22,7 @@ namespace ProjectUsers.Tests
         public string nameValid { get; set; } = "Name Valid";
         public string emailValid { get; set; } = "Jonathan@gmail.com";
         public string passwordValid { get; set; } = "Valid@Password123";
+        public string phoneNumberValid {get; set; } = "942536442";
         public Telephone telephoneValid { get; set; } = new Telephone("11", "942536442");
     }
 }

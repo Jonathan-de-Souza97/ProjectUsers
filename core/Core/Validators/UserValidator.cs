@@ -19,6 +19,12 @@ namespace core.Validators
                 .NotEmpty().WithMessage("The password is required")
                 .Matches(@"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_]).{8,}$")
                 .WithMessage("Password must contain at least one uppercase letter, one lowercase letter, one number, one special character, and be at least 8 characters long");
+
+            RuleFor(u => u.Telephone)
+                .NotEmpty().WithMessage("Telephone is required");
+
+            // RuleFor(u => u.Telephone.DDD)
+            //     .NotEmpty().WithMessage("DDD is required");
         }
     }
 }
