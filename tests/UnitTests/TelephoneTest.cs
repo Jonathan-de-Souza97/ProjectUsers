@@ -7,6 +7,16 @@ namespace ProjectUsers.Tests
         TestProprieties proprieties = new TestProprieties();
 
         [Fact]
+        public void TelephoneValid()
+        {
+            //Arrange //Act //Assert
+
+            Assert.True(proprieties.telephoneValid.Valid);
+            Assert.True(proprieties.telephoneValid.Errors.Count() == 0);
+            
+        }
+
+        [Fact]
         public void ReturnErrorWhenDDDIsNullorEmpyt()
         {
             //Arrange
