@@ -70,6 +70,18 @@ namespace ProjectUsers.Tests
             Assert.True(telephone.Invalid);
             Assert.Contains(telephone.Errors, e => e.Equals("The phone number must contain between 8 and 9 characters and only numbers"));
         }
+
+        [Fact]
+        public void ReturnErrorWhenPhoneNumberCharactersIsInvalid()
+        {
+            //Arrange
+            var telephone = new Telephone(proprieties.dddValid, proprieties.phoneNumberCharacterInvalid);
+
+            //Act and Assert
+
+            Assert.True(telephone.Invalid);
+            Assert.Contains(telephone.Errors, e => e.Equals("The phone number must contain between 8 and 9 characters and only numbers"));
+        }
         
     }
 }
