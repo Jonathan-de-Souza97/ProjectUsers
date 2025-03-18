@@ -8,7 +8,8 @@ namespace core.Validators
         public TelephoneValidator()
         {
             RuleFor(t => t.DDD)
-                .NotEmpty().WithMessage("DDD is required");
+                .NotEmpty().WithMessage("DDD is required")
+                .Length(2).WithMessage("The DDD must contain 02 characters");
         }
     }
 }

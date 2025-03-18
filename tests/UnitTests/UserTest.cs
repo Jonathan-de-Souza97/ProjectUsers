@@ -1,11 +1,10 @@
-using core.ValueObjects;
 using core.Entity;
 
 namespace ProjectUsers.Tests
 {
     public class UserTest
     {
-        UserTestProprieties proprieties = new UserTestProprieties();
+        TestPropriet proprieties = new TestPropriet();
 
         [Fact]
         public void UserValid()
