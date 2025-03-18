@@ -48,5 +48,16 @@ namespace ProjectUsers.Tests
             Assert.True(telephone.Invalid);
             Assert.Contains(telephone.Errors, e => e.Equals("The DDD must contain only numbers"));
         }
+        
+        [Fact]
+        public void ReturnErrorWhenPhoneNumberIsNullorEmpyt()
+        {
+            //Arrange
+            var telephone = new Telephone(proprieties.dddValid,null);
+
+            //Act and Assert
+            Assert.True(telephone.Invalid);
+            Assert.Contains(telephone.Errors, e => e.Equals("Phone number is required"));
+        }
     }
 }
