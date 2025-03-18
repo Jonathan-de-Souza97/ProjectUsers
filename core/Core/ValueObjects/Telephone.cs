@@ -7,13 +7,13 @@ namespace core.ValueObjects
     {
         public string? DDD { get; set; }
 
-        public string NumeroTelefone { get; set; }
+        public string PhoneNumber { get; set; }
 
 
-        public Telephone(string ddd, string numeroTelefone)
+        public Telephone(string ddd, string phoneNumber)
         {
             DDD = ddd;
-            NumeroTelefone = numeroTelefone;
+            PhoneNumber = phoneNumber;
 
             Validate(this, new TelephoneValidator());
         }
