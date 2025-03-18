@@ -26,7 +26,7 @@ namespace ProjectUsers.Tests
 
             // Act Assert 
             Assert.True(user.Invalid);
-            Assert.Contains(user.Errors, e => e.Equals("Name: The name is required"));
+            Assert.Contains(user.Errors, e => e.Equals("The name is required"));
         }
 
         [Fact]
@@ -37,7 +37,7 @@ namespace ProjectUsers.Tests
 
             // Act Assert 
             Assert.False(user.Valid);
-            Assert.Contains(user.Errors, e => e.Equals("Name: The name must contain a maximum of 50 characters"));
+            Assert.Contains(user.Errors, e => e.Equals("The name must contain a maximum of 50 characters"));
         }
 
         [Fact]
@@ -48,7 +48,7 @@ namespace ProjectUsers.Tests
 
             // Act Assert 
             Assert.True(user.Invalid);
-            Assert.Contains(user.Errors, e => e.Equals("Email: The e-mail is required"));
+            Assert.Contains(user.Errors, e => e.Equals("The e-mail is required"));
         }
 
         [Fact]
@@ -59,7 +59,7 @@ namespace ProjectUsers.Tests
 
             // Act Assert 
             Assert.True(user.Invalid);
-            Assert.Contains(user.Errors, e => e.Equals("Email: This e-mail is invalid"));
+            Assert.Contains(user.Errors, e => e.Equals("This e-mail is invalid"));
         }
 
         [Fact]
@@ -70,7 +70,7 @@ namespace ProjectUsers.Tests
 
             // Act Assert 
             Assert.True(user.Invalid);
-            Assert.Contains(user.Errors, e => e.Equals("Password: The password is required"));
+            Assert.Contains(user.Errors, e => e.Equals("The password is required"));
         }
 
         [Fact]
@@ -81,7 +81,7 @@ namespace ProjectUsers.Tests
 
             //Act Assert
             Assert.True(user.Invalid);
-            Assert.Contains(user.Errors, e => e.Equals("Password: Password must contain at least one uppercase letter, one lowercase letter, one number, one special character, and be at least 8 characters long"));
+            Assert.Contains(user.Errors, e => e.Equals("Password must contain at least one uppercase letter, one lowercase letter, one number, one special character, and be at least 8 characters long"));
         }
 
         [Fact]
@@ -92,20 +92,7 @@ namespace ProjectUsers.Tests
 
             //Act Assert
             Assert.True(user.Invalid);
-            Assert.Contains(user.Errors, e => e.Equals("Telephone: Telephone is required"));
+            Assert.Contains(user.Errors, e => e.Equals("Telephone is required"));
         }
-
-        // [Fact]
-        // public void ReturnErrorWhenTelephoneDDDIsNullorEmpyt()
-        // {
-        //     var telephone = new Telephone(proprieties.dddNull, proprieties.phoneNumberValid);
-
-        //     //Arrange
-        //     var user = new User(proprieties.nameValid, proprieties.emailValid, proprieties.passwordValid, telephone);
-
-        //     //Act Assert
-        //     Assert.True(user.Invalid);
-        //     Assert.Contains(user.Errors, e => e.Equals("Telephone.DDD: DDD is required"));
-        // }
     }
 }     
