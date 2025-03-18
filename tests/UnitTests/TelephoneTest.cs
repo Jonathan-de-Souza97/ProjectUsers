@@ -4,7 +4,7 @@ namespace ProjectUsers.Tests
 {
     public class TelephoneTest
     {
-        TestPropriet proprieties = new TestPropriet();
+        TestProprieties proprieties = new TestProprieties();
 
         [Fact]
         public void ReturnErrorWhenDDDIsNullorEmpyt()
@@ -26,6 +26,17 @@ namespace ProjectUsers.Tests
             //Act and Assert
             Assert.True(telephone.Invalid);
             Assert.Contains(telephone.Errors, e => e.Equals("The DDD must contain 02 characters"));
+        }
+
+        [Fact]
+        public void ReturnErrorWhenCharactersIsInvalid()
+        {
+            //Arrange
+            var telephone = new Telephone(proprieties.dddCharacterInvalid, proprieties.phoneNumberValid);
+
+            //Act and Assert
+            Assert.True(telephone.Invalid);
+            Assert.Contains(telephone.Errors, e => e.Equals("The DDD must contain only numbers"));
         }
     }
 }

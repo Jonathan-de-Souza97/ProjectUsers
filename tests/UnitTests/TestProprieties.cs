@@ -2,7 +2,7 @@ using core.ValueObjects;
 
 namespace ProjectUsers.Tests
 {
-    public class TestPropriet
+    public class TestProprieties
     {
         public string nameNull { get; set; } = null;
         public string emailNull { get; set; } = null;

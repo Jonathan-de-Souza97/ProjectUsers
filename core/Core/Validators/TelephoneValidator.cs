@@ -9,7 +9,8 @@ namespace core.Validators
         {
             RuleFor(t => t.DDD)
                 .NotEmpty().WithMessage("DDD is required")
-                .Length(2).WithMessage("The DDD must contain 02 characters");
+                .Length(2).WithMessage("The DDD must contain 02 characters")
+                .Matches("^[0-9]+$").WithMessage("The DDD must contain only numbers");
         }
     }
 }

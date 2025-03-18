@@ -4,7 +4,7 @@ namespace ProjectUsers.Tests
 {
     public class UserTest
     {
-        TestPropriet proprieties = new TestPropriet();
+        TestProprieties proprieties = new TestProprieties();
 
         [Fact]
         public void UserValid()
