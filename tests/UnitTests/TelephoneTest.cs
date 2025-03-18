@@ -28,7 +28,7 @@ namespace ProjectUsers.Tests
         }
 
         [Fact]
-        public void ReturnErrorWhenQuantityCharactersIsInvalid()
+        public void ReturnErrorWhenDDDQuantityCharactersIsInvalid()
         {
             //Arrange
             var telephone = new Telephone(proprieties.dddCharacterQuantityInvalid, proprieties.phoneNumberValid);
@@ -39,7 +39,7 @@ namespace ProjectUsers.Tests
         }
 
         [Fact]
-        public void ReturnErrorWhenCharactersIsInvalid()
+        public void ReturnErrorWhenDDDCharactersIsInvalid()
         {
             //Arrange
             var telephone = new Telephone(proprieties.dddCharacterInvalid, proprieties.phoneNumberValid);
@@ -59,5 +59,17 @@ namespace ProjectUsers.Tests
             Assert.True(telephone.Invalid);
             Assert.Contains(telephone.Errors, e => e.Equals("Phone number is required"));
         }
+
+        [Fact]
+        public void ReturnErrorWhenPhoneNumberQuantityCharactersIsInvalid()
+        {
+            //Arrange
+            var telephone = new Telephone(proprieties.dddValid, proprieties.phoneNumberCharacterQuantityInvalid);
+
+            //Act and Assert
+            Assert.True(telephone.Invalid);
+            Assert.Contains(telephone.Errors, e => e.Equals("The phone number must contain between 8 and 9 characters and only numbers"));
+        }
+        
     }
 }
