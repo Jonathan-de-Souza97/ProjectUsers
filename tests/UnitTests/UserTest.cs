@@ -1,6 +1,6 @@
 using core.Entity;
 
-namespace ProjectUsers.Tests
+namespace UnitTests
 {
     public class UserTest
     {
@@ -94,4 +94,4 @@ namespace ProjectUsers.Tests
             Assert.Contains(user.Errors, e => e.Equals("Telephone is required"));
         }
     }
-}     
+}
