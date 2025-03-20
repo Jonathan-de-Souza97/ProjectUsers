@@ -18,11 +18,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\core\core\core.csproj" />
+    <Using Include="Xunit" />
   </ItemGroup>
 
   <ItemGroup>
-    <Using Include="Xunit" />
+    <ProjectReference Include="..\..\application\Application\Application.csproj" />
+    <ProjectReference Include="..\..\core\Core\Core.csproj" />
   </ItemGroup>
 
 </Project>

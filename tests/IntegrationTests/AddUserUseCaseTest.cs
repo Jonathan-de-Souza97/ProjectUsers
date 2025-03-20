@@ -1,36 +1,44 @@
+using application.Interfaces;
+using Application.Commands;
+using Application.DTOs;
+using Application.Interfaces;
 using AutoMapper;
-using core.DTOs;
-using core.Mappings;
-using core.UseCases;
 using core.ValueObjects;
-namespace IntegrationTests
+namespace ProjectUsers.tests
 {
-    [Trait("Category", "IntegrationTest")]
+    [Trait("Category", "IntegrationTests")]
     public class AddUserUseCaseTest
     {
-        private readonly AddUserUseCase _usecase;
+        private readonly IUserRepository _repository;
         private readonly IMapper _mapper;
+        private readonly IAddUserUseCase _useCase;
 
-        public AddUserUseCaseTest()
+        public AddUserUseCaseTest(IUserRepository repository, IMapper mapper, IAddUserUseCase useCase)
         {
-            var mapperConfig = new MapperConfiguration(cfg =>
-            {
-                cfg.AddProfile(new UserMappingProfile());
-            });
-
-            _mapper = mapperConfig.CreateMapper();
-
-            _usecase = new AddUserUseCase(_mapper);
+            _repository = repository;
+            _mapper = mapper;
+            _useCase = useCase;
         }
 
-        [Trait("Item", "User")]
+        [Trait("Item", "AddUserUseCase")]
         [Fact]
-        public void MustAddUserUseCase()
+        public async void AddUserValid()
         {
             //Arrange
-            var telephone = new Telephone("11", "944123456");
-            var userDTO = new AddUserDTO(
-                "Jonathan de Souza", "Jonathan@gmail.com", "PasswordValid", telephone);
+            var telephone = new TelephoneDTO { DDD = "11", PhoneNumber = "971234567" };
+            var user = new AddUserCommand
+            {
+                Nome = "Jonathan de Souza",
+                Email = "jonathan@gmail.com",
+                Password = "ValidPassword@",
+                Telephone = telephone
+            };
+
+            //Act
+            var act = await _useCase.AddUserAsync(user);
+
+            //Assert
+            Assert.True(act.SucessResponse);            
         }
     }
 }
