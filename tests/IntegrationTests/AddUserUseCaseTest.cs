@@ -30,7 +30,6 @@ namespace ProjectUsers.tests
                 .AddInMemoryCollection(inMemorySettings)
                 .Build();
 
-
             _context = new ContextBase(configuration, "TestDB");
 
             var mapperConfig = new MapperConfiguration(cfg =>

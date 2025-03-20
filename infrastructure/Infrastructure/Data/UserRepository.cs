@@ -49,7 +49,7 @@ namespace Infrastructure.Data
             try
             {
                 var connection = await _context.CreateOpenConnectionAsync();
-                var user = await connection.QueryFirstAsync<User>(sql, new {email}, commandTimeout:1000);
+                var user = await connection.QueryFirstOrDefaultAsync<User>(sql, new {email}, commandTimeout:1000);
 
                 return Result<User>.Sucess(user);
             }
