@@ -1,6 +1,6 @@
 using core.ValueObjects;
 
-namespace ProjectUsers.Tests
+namespace UnitTests
 {
     public class TelephoneTest
     {
@@ -13,14 +13,14 @@ namespace ProjectUsers.Tests
 
             Assert.True(proprieties.telephoneValid.Valid);
             Assert.True(proprieties.telephoneValid.Errors.Count() == 0);
-            
+
         }
 
         [Fact]
         public void ReturnErrorWhenDDDIsNullorEmpyt()
         {
             //Arrange
-            var telephone = new Telephone(null,proprieties.phoneNumberValid);
+            var telephone = new Telephone(null, proprieties.phoneNumberValid);
 
             //Act and Assert
             Assert.True(telephone.Invalid);
@@ -28,7 +28,7 @@ namespace ProjectUsers.Tests
         }
 
         [Fact]
-        public void ReturnErrorWhenQuantityCharactersIsInvalid()
+        public void ReturnErrorWhenDDDQuantityCharactersIsInvalid()
         {
             //Arrange
             var telephone = new Telephone(proprieties.dddCharacterQuantityInvalid, proprieties.phoneNumberValid);
@@ -39,7 +39,7 @@ namespace ProjectUsers.Tests
         }
 
         [Fact]
-        public void ReturnErrorWhenCharactersIsInvalid()
+        public void ReturnErrorWhenDDDCharactersIsInvalid()
         {
             //Arrange
             var telephone = new Telephone(proprieties.dddCharacterInvalid, proprieties.phoneNumberValid);
@@ -48,5 +48,40 @@ namespace ProjectUsers.Tests
             Assert.True(telephone.Invalid);
             Assert.Contains(telephone.Errors, e => e.Equals("The DDD must contain only numbers"));
         }
+
+        [Fact]
+        public void ReturnErrorWhenPhoneNumberIsNullorEmpyt()
+        {
+            //Arrange
+            var telephone = new Telephone(proprieties.dddValid, null);
+
+            //Act and Assert
+            Assert.True(telephone.Invalid);
+            Assert.Contains(telephone.Errors, e => e.Equals("Phone number is required"));
+        }
+
+        [Fact]
+        public void ReturnErrorWhenPhoneNumberQuantityCharactersIsInvalid()
+        {
+            //Arrange
+            var telephone = new Telephone(proprieties.dddValid, proprieties.phoneNumberCharacterQuantityInvalid);
+
+            //Act and Assert
+            Assert.True(telephone.Invalid);
+            Assert.Contains(telephone.Errors, e => e.Equals("The phone number must contain between 8 and 9 characters and only numbers"));
+        }
+
+        [Fact]
+        public void ReturnErrorWhenPhoneNumberCharactersIsInvalid()
+        {
+            //Arrange
+            var telephone = new Telephone(proprieties.dddValid, proprieties.phoneNumberCharacterInvalid);
+
+            //Act and Assert
+
+            Assert.True(telephone.Invalid);
+            Assert.Contains(telephone.Errors, e => e.Equals("The phone number must contain between 8 and 9 characters and only numbers"));
+        }
+
     }
 }
