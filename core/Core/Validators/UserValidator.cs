@@ -22,6 +22,9 @@ namespace core.Validators
 
             RuleFor(u => u.Telephone)
                 .NotEmpty().WithMessage("Telephone is required");
+
+            // RuleFor(u => u.Telephone.DDD)
+            //     .NotEmpty().WithMessage("DDD is required");
         }
     }
 }
