@@ -40,6 +40,5 @@ namespace ProjectUsers.tests
             //Assert
             Assert.True(act.SucessResponse);            
         }
-
     }
 }

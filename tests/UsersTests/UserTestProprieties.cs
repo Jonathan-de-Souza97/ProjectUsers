@@ -1,8 +1,8 @@
 using core.ValueObjects;
 
-namespace UnitTests
+namespace ProjectUsers.Tests
 {
-    public class TestProprieties
+    public class UserTestProprieties
     {
         public string nameNull { get; set; } = null;
         public string emailNull { get; set; } = null;
@@ -22,8 +22,7 @@ namespace UnitTests
         public string nameValid { get; set; } = "Name Valid";
         public string emailValid { get; set; } = "Jonathan@gmail.com";
         public string passwordValid { get; set; } = "Valid@Password123";
-        public string phoneNumberValid { get; set; } = "942536442";
-        public string dddValid { get; set; } = "11";
+        public string phoneNumberValid {get; set; } = "942536442";
         public Telephone telephoneValid { get; set; } = new Telephone("11", "942536442");
     }
 }
