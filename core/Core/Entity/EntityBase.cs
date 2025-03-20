@@ -6,6 +6,8 @@ namespace core.Entity
 {
     public class EntityBase
     {
+        public int id { get; set; }
+
         [JsonIgnore]
         public bool Valid { get; private set; }
 
@@ -24,7 +26,7 @@ namespace core.Entity
             Valid = ValidationResult.IsValid;
 
             Errors = ValidationResult.Errors
-                .Select(e => $"{e.ErrorMessage}")
+                .Select(e => $"{e.PropertyName}: {e.ErrorMessage}")
                 .ToList();
 
             return Valid;

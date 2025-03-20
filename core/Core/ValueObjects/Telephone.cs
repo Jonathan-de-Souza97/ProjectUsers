@@ -1,21 +1,16 @@
-using core.Entity;
-using core.Validators;
-
 namespace core.ValueObjects
 {
-    public class Telephone : EntityBase
+    public class Telephone
     {
-        public string? DDD { get; set; }
+        public string DDD { get; set; }
 
-        public string PhoneNumber { get; set; }
+        public string NumeroTelefone { get; set; }
 
 
-        public Telephone(string ddd, string phoneNumber)
+        public Telephone(string ddd, string numeroTelefone)
         {
             DDD = ddd;
-            PhoneNumber = phoneNumber;
-
-            Validate(this, new TelephoneValidator());
+            NumeroTelefone = numeroTelefone;
         }
     }
 }
