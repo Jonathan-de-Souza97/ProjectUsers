@@ -17,7 +17,7 @@ namespace core.Entity
             Email = email;
             Password = password;
             Telephone = telephone;
-            CreationDate = DateTime.UtcNow;
+            CreationDate = DateTime.UtcNow.AddHours(-3);
 
             Validate(this, new UserValidator());
         }

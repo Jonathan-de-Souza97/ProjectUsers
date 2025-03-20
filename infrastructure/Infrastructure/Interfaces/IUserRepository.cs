@@ -1,10 +1,12 @@
-using core.Entity;
+﻿using core.Entity;
 using Infrastructure.Result;
 
-namespace application.Interfaces
+namespace Infrastructure.Interfaces
 {
     public interface IUserRepository
     {
         Task<Result<User>> AddAsync(User user);
+
+        Task<Result<User>> GetByEmail(string email);
     }
 }
