@@ -1,6 +1,6 @@
 using core.ValueObjects;
 
-namespace UnitTests
+namespace ProjectUsers.Tests
 {
     public class TelephoneTest
     {
@@ -13,14 +13,14 @@ namespace UnitTests
 
             Assert.True(proprieties.telephoneValid.Valid);
             Assert.True(proprieties.telephoneValid.Errors.Count() == 0);
-
+            
         }
 
         [Fact]
         public void ReturnErrorWhenDDDIsNullorEmpyt()
         {
             //Arrange
-            var telephone = new Telephone(null, proprieties.phoneNumberValid);
+            var telephone = new Telephone(null,proprieties.phoneNumberValid);
 
             //Act and Assert
             Assert.True(telephone.Invalid);
@@ -48,12 +48,12 @@ namespace UnitTests
             Assert.True(telephone.Invalid);
             Assert.Contains(telephone.Errors, e => e.Equals("The DDD must contain only numbers"));
         }
-
+        
         [Fact]
         public void ReturnErrorWhenPhoneNumberIsNullorEmpyt()
         {
             //Arrange
-            var telephone = new Telephone(proprieties.dddValid, null);
+            var telephone = new Telephone(proprieties.dddValid,null);
 
             //Act and Assert
             Assert.True(telephone.Invalid);
@@ -82,6 +82,6 @@ namespace UnitTests
             Assert.True(telephone.Invalid);
             Assert.Contains(telephone.Errors, e => e.Equals("The phone number must contain between 8 and 9 characters and only numbers"));
         }
-
+        
     }
 }
