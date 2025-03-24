@@ -1,11 +1,15 @@
 using core.Entity;
+using ProjectUsers.Tests;
 
 namespace UnitTests
 {
+    [Trait("Category","UnitTest")]
     public class UserTest
     {
         TestProprieties proprieties = new TestProprieties();
 
+
+        [Trait("Item","User")]
         [Fact]
         public void UserValid()
         {
@@ -17,6 +21,7 @@ namespace UnitTests
             Assert.True(user.Errors.Count() == 0);
         }
 
+        [Trait("Item","User")]
         [Fact]
         public void ReturnErrorWhenUserNameIsNullorEmpyt()
         {
@@ -28,6 +33,7 @@ namespace UnitTests
             Assert.Contains(user.Errors, e => e.Equals("The name is required"));
         }
 
+        [Trait("Item","User")]
         [Fact]
         public void ReturnErrorWhenUserNameIsInvalid()
         {
@@ -39,6 +45,7 @@ namespace UnitTests
             Assert.Contains(user.Errors, e => e.Equals("The name must contain a maximum of 50 characters"));
         }
 
+        [Trait("Item","User")]
         [Fact]
         public void ReturnErrorWhenEmailIsNullorEmpyt()
         {
@@ -50,6 +57,7 @@ namespace UnitTests
             Assert.Contains(user.Errors, e => e.Equals("The e-mail is required"));
         }
 
+        [Trait("Item","User")]
         [Fact]
         public void ReturnErrorWhenEmailIsInvalid()
         {
@@ -61,6 +69,7 @@ namespace UnitTests
             Assert.Contains(user.Errors, e => e.Equals("This e-mail is invalid"));
         }
 
+        [Trait("Item","User")]
         [Fact]
         public void ReturnErrorWhenPasswordIsNullorEmpyt()
         {
@@ -72,6 +81,7 @@ namespace UnitTests
             Assert.Contains(user.Errors, e => e.Equals("The password is required"));
         }
 
+        [Trait("Item","User")]
         [Fact]
         public void ReturnErrorWhenPasswordIsInvalid()
         {
@@ -83,6 +93,7 @@ namespace UnitTests
             Assert.Contains(user.Errors, e => e.Equals("Password must contain at least one uppercase letter, one lowercase letter, one number, one special character, and be at least 8 characters long"));
         }
 
+        [Trait("Item","User")]
         [Fact]
         public void ReturnErrorWhenTelephoneIsNullorEmpyt()
         {

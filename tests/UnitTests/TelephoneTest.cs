@@ -2,11 +2,12 @@ using core.ValueObjects;
 
 namespace ProjectUsers.Tests
 {
+    [Trait("Category", "UnitTests")]
     public class TelephoneTest
     {
         TestProprieties proprieties = new TestProprieties();
 
-        [Fact]
+        [Trait("Item","Telephone")]
         public void TelephoneValid()
         {
             //Arrange //Act //Assert
@@ -16,7 +17,7 @@ namespace ProjectUsers.Tests
             
         }
 
-        [Fact]
+        [Trait("Item","Telephone")]
         public void ReturnErrorWhenDDDIsNullorEmpyt()
         {
             //Arrange
@@ -27,7 +28,7 @@ namespace ProjectUsers.Tests
             Assert.Contains(telephone.Errors, e => e.Equals("DDD is required"));
         }
 
-        [Fact]
+        [Trait("Item","Telephone")]
         public void ReturnErrorWhenDDDQuantityCharactersIsInvalid()
         {
             //Arrange
@@ -38,7 +39,7 @@ namespace ProjectUsers.Tests
             Assert.Contains(telephone.Errors, e => e.Equals("The DDD must contain 02 characters"));
         }
 
-        [Fact]
+        [Trait("Item","Telephone")]
         public void ReturnErrorWhenDDDCharactersIsInvalid()
         {
             //Arrange
@@ -49,7 +50,7 @@ namespace ProjectUsers.Tests
             Assert.Contains(telephone.Errors, e => e.Equals("The DDD must contain only numbers"));
         }
         
-        [Fact]
+        [Trait("Item","Telephone")]
         public void ReturnErrorWhenPhoneNumberIsNullorEmpyt()
         {
             //Arrange
@@ -60,7 +61,7 @@ namespace ProjectUsers.Tests
             Assert.Contains(telephone.Errors, e => e.Equals("Phone number is required"));
         }
 
-        [Fact]
+        [Trait("Item","Telephone")]
         public void ReturnErrorWhenPhoneNumberQuantityCharactersIsInvalid()
         {
             //Arrange
@@ -71,7 +72,7 @@ namespace ProjectUsers.Tests
             Assert.Contains(telephone.Errors, e => e.Equals("The phone number must contain between 8 and 9 characters and only numbers"));
         }
 
-        [Fact]
+        [Trait("Item","Telephone")]
         public void ReturnErrorWhenPhoneNumberCharactersIsInvalid()
         {
             //Arrange
