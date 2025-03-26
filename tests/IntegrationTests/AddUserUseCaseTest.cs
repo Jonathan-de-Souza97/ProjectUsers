@@ -5,7 +5,6 @@ using Application.Mappings;
 using AutoMapper;
 using Infrastructure.Context;
 using Microsoft.Extensions.Configuration;
-
 using Infrastructure.Interfaces;
 using Infrastructure.Data;
 using Application.UseCases;

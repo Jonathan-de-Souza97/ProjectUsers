@@ -24,8 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\core\core\core.csproj" />
-    <ProjectReference Include="..\..\infrastructure\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\..\ProjectUsersAPI\ProjectUsersAPI.csproj" />
   </ItemGroup>
 
   <ItemGroup>

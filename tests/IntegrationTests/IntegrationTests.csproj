@@ -19,13 +19,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Using Include="Xunit" />
+    <ProjectReference Include="..\..\ProjectUsersAPI\ProjectUsersAPI.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\application\Application\Application.csproj" />
-    <ProjectReference Include="..\..\core\Core\Core.csproj" />
-    <ProjectReference Include="..\..\infrastructure\Infrastructure\Infrastructure.csproj" />
+    <Using Include="Xunit" />
   </ItemGroup>
 
 </Project>
