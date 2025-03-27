@@ -1,15 +1,16 @@
-using core.Validators;
-using core.ValueObjects;
+using Core.Validators;
+using Core.ValueObjects;
 
-namespace core.Entity
+namespace Core.Entity
 {
     public class User : EntityBase
     {
+        public int Id { get; set; }
         public string Name { get; private set; }
         public string Email { get; private set; }
         public string Password { get; private set; }
         public Telephone Telephone{ get; private set; }
-        public DateTime CreationDate { get; private set; }
+        public DateTime CreateAt { get; private set; }
 
         public User(string name, string email, string password, Telephone telephone)
         {
@@ -17,8 +18,6 @@ namespace core.Entity
             Email = email;
             Password = password;
             Telephone = telephone;
-            CreationDate = DateTime.UtcNow.AddHours(-3);
-
             Validate(this, new UserValidator());
         }
     }

@@ -1,7 +1,7 @@
 using Application.Commands;
 using Application.DTOs;
 using AutoMapper;
-using core.Entity;
+using Core.Entity;
 
 namespace Application.Mappings
 {

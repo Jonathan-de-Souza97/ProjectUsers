@@ -3,8 +3,8 @@ using Application.DTOs;
 using Application.Interfaces;
 using Application.Responses;
 using AutoMapper;
-using core.Entity;
-using core.ValueObjects;
+using Core.Entity;
+using Core.ValueObjects;
 using Infrastructure.Interfaces;
 
 namespace Application.UseCases

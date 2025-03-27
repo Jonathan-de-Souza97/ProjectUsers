@@ -1,7 +1,7 @@
-using core.ValueObjects;
+using Core.ValueObjects;
 using FluentValidation;
 
-namespace core.Validators
+namespace Core.Validators
 {
     public class TelephoneValidator : AbstractValidator<Telephone>
     {

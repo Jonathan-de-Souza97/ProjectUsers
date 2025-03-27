@@ -1,6 +1,4 @@
-
-
-using core.Entity;
+using Core.Entity;
 using Dapper;
 using Infrastructure.Context;
 using Infrastructure.Interfaces;

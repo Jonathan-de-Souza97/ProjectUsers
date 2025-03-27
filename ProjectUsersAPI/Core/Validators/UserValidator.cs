@@ -1,7 +1,7 @@
-using core.Entity;
+using Core.Entity;
 using FluentValidation;
 
-namespace core.Validators
+namespace Core.Validators
 {
     public class UserValidator : AbstractValidator<User>
     {

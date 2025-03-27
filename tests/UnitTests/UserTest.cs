@@ -1,4 +1,4 @@
-using core.Entity;
+using Core.Entity;
 using ProjectUsers.Tests;
 
 namespace UnitTests

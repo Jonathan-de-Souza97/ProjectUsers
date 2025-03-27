@@ -2,7 +2,7 @@
 using FluentValidation.Results;
 using System.Text.Json.Serialization;
 
-namespace core.Entity
+namespace Core.Entity
 {
     public class EntityBase
     {
@@ -15,6 +15,7 @@ namespace core.Entity
         [JsonIgnore]
         public ValidationResult ValidationResult { get; private set; }
 
+        [JsonIgnore]
         public List<string> Errors { get; private set; } = new List<string>();
 
         public bool Validate<TModel>(TModel model, AbstractValidator<TModel> validator)

@@ -1,7 +1,6 @@
 using Application.DTOs;
-using core.Entity;
 using AutoMapper;
-using core.ValueObjects;
+using Core.ValueObjects;
 
 namespace Application.Mappings
 {

@@ -1,7 +1,7 @@
-using core.Entity;
-using core.Validators;
+using Core.Entity;
+using Core.Validators;
 
-namespace core.ValueObjects
+namespace Core.ValueObjects
 {
     public class Telephone : EntityBase
     {

@@ -1,4 +1,4 @@
-using core.ValueObjects;
+using Core.ValueObjects;
 
 namespace ProjectUsers.Tests
 {
